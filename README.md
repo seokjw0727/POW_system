@@ -1,4 +1,4 @@
-# 　 　 　 　 　 Python 복습
+# 　 　 　 　 　 GitHub Page 연습하기
 
 <p align="center">
   <a href="https://discord.gg" target="_blank"><img src="https://img.shields.io/badge/매코＃0663-5865F2?style=plastic&logo=Discord&logoColor=5865F2"/></a>
