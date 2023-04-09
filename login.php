@@ -3,13 +3,13 @@
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["username"];
     $password = $_POST["password"];
-    // Validate credentials
+    // Check if username and password are correct
     if ($username == "admin" && $password == "123") {
-      $_SESSION["loggedin"] = true;
+      $_SESSION["loggedin"] = true; 
       $_SESSION["username"] = $username;
-      header("location: welcome.php");
+      header("location: welcome.html"); # Redirect to welcome page
     } else {
-      $error = "Invalid username or password";
+      $error = "Invalid username or password"; # Error message
     }
   }
 ?>
