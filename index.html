@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SUGAR9 System</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <title>Login Page</title>
   </head>
   <body>
-    <div class="Login to SUGAR9">
-      <h1>Login</h1>
-      <form action="login.php" method="post">
-        <label for="ID"><b>ID</b></label>
-        <input type="text" placeholder="ID를 작성하세요." name="username" required>
-        <label for="password"><b>비밀번호</b></label>
-        <input type="password" placeholder="비빌번호를 작성하세요." name="password" required>
-        <button type="submit">로그인</button>
-      </form>
-    </div>
+    <h2>Login Form</h2>
+    <form action="/login" method="post">
+      <label for="username">Username:</label><br>
+      <input type="text" id="username" name="username"><br>
+      <label for="password">Password:</label><br>
+      <input type="password" id="password" name="password"><br><br>
+      <input type="submit" value="Login">
+    </form>
   </body>
 </html>
