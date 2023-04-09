@@ -1,26 +1,28 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
 @app.route('/')
-def index():
-    return render_template('index.html')
+def home():
+    return 'Welcome to my web app!'
 
-@app.route('/login', methods=['POST'])
+@app.route('/about')
+def about():
+    return 'This is an about page.'
+
+@app.route('/user/<name>')
+def user(name):
+    return f'The point of {name} is 3.'
+
+@app.route('/login', methods=['GET', 'POST'])
 def login():
-    username = request.form['username']
-    password = request.form['password']
-    
-    # check if username and password are valid
-    if username == '123' and password == '123':
-        # redirect to welcome page
-        return redirect(url_for('welcome'))
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        # Check the credentials and grant access if valid
+        return 'Login successful!'
     else:
-        return 'Invalid login information'
-
-@app.route('/welcome')
-def welcome():
-    return render_template('welcome.html')
+        return render_template('login.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
