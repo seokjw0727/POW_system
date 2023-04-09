@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('login.html')
+    return render_template('index.html')
 
 @app.route('/login', methods=['POST'])
 def login():
@@ -12,7 +12,7 @@ def login():
     password = request.form['password']
     
     # check if username and password are valid
-    if username == 'user' and password == 'pass':
+    if username == '123' and password == '123':
         # redirect to welcome page
         return redirect(url_for('welcome'))
     else:
