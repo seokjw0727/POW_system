@@ -1,3 +1,4 @@
-# SUGAR9 - Problem Of a Week
+# SUGAR9 - Problem Of a Week 
 
-This is a repository for the Problem Of a Week (POW) for the SUGAR9 project.
+> 학생의 point 를 확인할 수 있는 페이지 개발중
+
