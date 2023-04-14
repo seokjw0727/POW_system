@@ -7,15 +7,21 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body>
-    <canvas id="myChart" width="100" height="100"></canvas>
+    <style>
+        canvas {
+          width: 28vw;
+          height: 26vw;
+        }
+      </style>
+    <canvas id="myChart"></canvas> 
     <script>
       var ctx = document.getElementById("myChart").getContext("2d");
       var points = [
-        { name: "김아무개", score: 85 },
-        { name: "이바보🥈", score: 92 },
-        { name: "박멍청이", score: 79 },
-        { name: "최돌쇠🥉", score: 88 },
-        { name: "한아름🥇", score: 96 },
+        { name: "김아무개", score: 4 },
+        { name: "이바보🥈", score: 12 },
+        { name: "박멍청이", score: 9 },
+        { name: "최돌쇠🥉", score: 11 },
+        { name: "한아름🥇", score: 15 },
       ];
       points.sort(function(a, b) {
         return b.score - a.score;
