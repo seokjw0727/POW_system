@@ -1,63 +1,57 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>SUGAR9 포인트 현황</title> 
-	<!-- Chart.js를 가져옵니다. -->
-	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</head>
-<body>
-	<h1>POINT</h1>
-	<!-- 그래프를 그릴 캔버스 -->
-	<canvas id="myChart"></canvas>
-
-	<script>
-		// 그래프 데이터
-		var point = {
-			"Dummy01": 50,
-			"Dummy02": 40,
-			"Dummy03": 30,
-			"Dummy04": 20,
-			"Dummy05": 10
-		};
-
-		// 그래프 캔버스 가져오기
-		var ctx = document.getElementById("myChart").getContext("2d");
-
-		// 그래프 설정
-		var myChart = new Chart(ctx, {
-			type: 'bar',
-			data: {
-				labels: Object.keys(point),
-				datasets: [{
-					label: 'Points',
-					data: Object.values(point),
-					backgroundColor: [
-						'rgba(255, 99, 132, 0.2)',
-						'rgba(54, 162, 235, 0.2)',
-						'rgba(255, 206, 86, 0.2)',
-						'rgba(75, 192, 192, 0.2)',
-						'rgba(153, 102, 255, 0.2)'
-					],
-					borderColor: [
-						'rgba(255, 99, 132, 1)',
-						'rgba(54, 162, 235, 1)',
-						'rgba(255, 206, 86, 1)',
-						'rgba(75, 192, 192, 1)',
-						'rgba(153, 102, 255, 1)'
-					],
-					borderWidth: 1
-				}]
-			},
-			options: {
-				scales: {
-					yAxes: [{
-						ticks: {
-							beginAtZero: true 
-						}
-					}]
-				}
-			}
-		});
-	</script>
-</body>
+  <head>
+    <title>SUGAR9 | 학생 포인트</title>
+    <h1>Student Points</h1>
+    <a href="https://www.instagram.com/official_sugar9/"><img src="instagram_logo.png" alt="인스타그램" style="float:right;"></a>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <canvas id="myChart"></canvas>
+    <script>
+      var ctx = document.getElementById("myChart").getContext("2d");
+      var points = [
+        { name: "김아무개", score: 85 },
+        { name: "이바보🥈", score: 92 },
+        { name: "박멍청이", score: 79 },
+        { name: "최돌쇠🥉", score: 88 },
+        { name: "한아름🥇", score: 96 },
+      ];
+      points.sort(function(a, b) {
+        return b.score - a.score;
+      });
+      var chart = new Chart(ctx, {
+        type: "bar",
+        data: {
+          labels: points.map(function(student) {
+            return student.name;
+          }),
+          datasets: [
+            {
+              label: "Points",
+              data: points.map(function(student) {
+                return student.score;
+              }),
+              backgroundColor: "rgba(54, 162, 235, 0.2)",
+              borderColor: "rgba(54, 162, 235, 1)",
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          scales: {
+            yAxes: [
+              {
+                ticks: {
+                  beginAtZero: true,
+                },
+              },
+            ],
+          },
+        },
+      });
+    </script>
+  </body>
 </html>
+
+
