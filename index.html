@@ -7,24 +7,25 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body>
-    <style>
-        canvas {
-          width: 28vw;
-          height: 26vw;
-        }
-      </style>
     <canvas id="myChart"></canvas> 
+      <style>
+      canvas {
+        width: 25%;
+        height: 25%;
+      }
+      </style>
     <script>
       var ctx = document.getElementById("myChart").getContext("2d");
       var points = [
-        { name: "민석", score: 0 },
-        { name: "상우", score: 0 },
-        { name: "성욱", score: 0 },
-        { name: "성찬", score: 0 },
-        { name: "재민", score: 0 },
-        { name: "지우", socre: 0 },
-        { name: "현규", score: 0 },
-        { name: "현수", score: 0 }
+        { name: "박재민🥇", score: 4 },
+        { name: "길양호🥈", score: 3},
+        { name: "김태양🥈", score: 3 },
+        { name: "권율언🥈", score: 3 },
+        { name: "맹건호🥈", score: 3 },
+        { name: "홍현규🥈", score: 3 },
+        { name: "석지우🥉", socre: 2 },
+        { name: "유연우", score: 1 },
+        { name: "윤대경", score: 1 }
       ];
       points.sort(function(a, b) {
         return b.score - a.score;
