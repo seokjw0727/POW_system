@@ -1,21 +1,27 @@
+<!-- 
+  사이트 개발자 : 석지우 (SUGAR9)
+  사이트의 모든 저작권은 SUGAR9에게 있으며 모든 저작물의 무단 복제 및 도용을 금지합니다.
+
+  <CopyRight ⓒ 2023 SUGAR9 All Rights Reserved.>
+ -->
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SUGAR9 | 학생 포인트</title>
-    <h1>Student Points</h1>
-    <a href="https://www.instagram.com/official_sugar9/"><img width="30px" heigth="30px" src="instagram_logo.png" alt="인스타그램" style="float:right;"></a>
+    <title>Student's points</title>
+    <h1>Points (2023)</h1>
+    <h5>최근 업데이트 | 2023.07.16</h5>
+
+    <br>
+      <label style="float:right">SUGAR9 공식 계정</label>
+      <a href="https://www.instagram.com/official_sugar9/"><img width="25px" heigth="25px" src="instagram_logo.png" style="float:right;"></a>
+    <br>
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body>
-    <canvas id="myChart"></canvas> 
-      <style>
-      canvas {
-        width: 25%;
-        height: 25%;
-      }
-      </style>
+    <canvas id="points"></canvas> 
     <script>
-      var ctx = document.getElementById("myChart").getContext("2d");
+      var ctx = document.getElementById("points").getContext("2d");
       var points = [
         { name: "박재민🥇", score: 13 },
         { name: "석지우🥈", score: 7 },
@@ -45,9 +51,11 @@
               data: points.map(function(student) {
                 return student.score;
               }),
-              backgroundColor: "rgba(54, 162, 235, 0.2)",
-              borderColor: "rgba(54, 162, 235, 1)",
-              borderWidth: 1,
+              backgroundColor: "rgba(0, 0, 50, 0.5)",
+              borderColor: points.map(function(student) {
+                return "hsl(" + Math.random() * 360 + ", 100%, 50%)";
+              }),
+              borderWidth: 1.0,
             },
           ],
         },
@@ -56,7 +64,7 @@
             yAxes: [
               {
                 ticks: {
-                  beginAtZero: true,
+                  beginAtZero: false,
                 },
               },
             ],
