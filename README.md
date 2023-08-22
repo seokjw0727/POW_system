@@ -4,4 +4,4 @@
 
 <br>
 
-> 최근 Best Solution | 장인호
+> 최근 Best Solution | (서울대학교 전기정보공학부 학사과정) 고관영
